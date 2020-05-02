@@ -1,0 +1,13 @@
+<p>
+  list-maternity works!
+</p>
+<div class="row row-cols-3">
+  <div class="card col" style="width: 18rem;" *ngFor="let product of products">
+  <img src="/assets/images/star-logo.png" class="card-img-top" alt="...">
+  <div class="card-body" >
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <a class="btn btn-primary stretched-link" [title]="product.name + 'details'" [routerLink]="['/products', product.productId]">Go somewhere</a>
+  </div>
+  </div>
+</div>

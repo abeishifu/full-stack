@@ -1,0 +1,31 @@
+<p>
+  list-women works!
+</p>
+<div class="row row-cols-3">
+    <div class="card col" style="width: 18rem;" *ngFor="let product of products">
+    <img src="/assets/images/star-logo.png" class="card-img-top" alt="...">
+    <div class="card-body" >
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <a class="btn btn-primary stretched-link" [title]="product.name + 'details'" [routerLink]="['/products', product.productId]">Go somewhere</a>
+    </div>
+    </div>
+</div>
+
+  <!-- <div class="card col-sm" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card with stretched link</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+    </div>
+  </div> -->
+
+  <!-- <div class="card col-sm" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card with stretched link</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+    </div>
+  </div> -->
