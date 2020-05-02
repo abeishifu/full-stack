@@ -13,6 +13,7 @@ import { ListWomenComponent } from './list-women/list-women.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { CartService } from './cart.service';
+import { IndexComponent } from './index/index.component';
 
 
 @NgModule({
@@ -25,12 +26,14 @@ import { CartService } from './cart.service';
       ListGirlsComponent,
       ListCosmeticsComponent,
       ProductDetailsComponent,
-      CartComponent
+      CartComponent,
+      IndexComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       RouterModule.forRoot([
+         { path: '', component: IndexComponent},
          { path: 'login', component: UserLoginComponent },
          { path: 'women', component: ListWomenComponent },
          { path: 'maternity', component: ListMaternityComponent },
@@ -43,6 +46,7 @@ import { CartService } from './cart.service';
    ],
    providers: [CartService],
    bootstrap: [AppComponent]
+
 })
 
 export class AppModule { }
