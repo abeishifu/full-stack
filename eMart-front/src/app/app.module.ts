@@ -11,6 +11,8 @@ import { ListGirlsComponent } from './list-girls/list-girls.component';
 import { ListMaternityComponent } from './list-maternity/list-maternity.component';
 import { ListWomenComponent } from './list-women/list-women.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
 
 
 @NgModule({
@@ -22,24 +24,25 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
       ListMaternityComponent,
       ListGirlsComponent,
       ListCosmeticsComponent,
-      ProductDetailsComponent
+      ProductDetailsComponent,
+      CartComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       RouterModule.forRoot([
-         { path: '', component: AppComponent },
          { path: 'login', component: UserLoginComponent },
          { path: 'women', component: ListWomenComponent },
          { path: 'maternity', component: ListMaternityComponent },
          { path: 'girls', component: ListGirlsComponent },
          { path: 'cosmetics', component: ListCosmeticsComponent },
          { path: 'products/:productId', component: ProductDetailsComponent },
-   ]),
-],
-   providers: [],
-   bootstrap: [
-      AppComponent
-   ]
+         { path: 'cart', component: CartComponent },
+   
+      ])
+   ],
+   providers: [CartService],
+   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
