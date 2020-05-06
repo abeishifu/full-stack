@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-top-bar',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-
-  constructor() { }
+  active=0;
+  // @Output() show = new EventEmitter<boolean>();
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
+
+  // showNav(){
+  //   this.show.emit(false);
+  //   this.router.navigateByUrl("/login");
+  // }
+
 
 }
