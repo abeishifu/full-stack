@@ -1,7 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from '../../components-user/login/login.component';
+import { LoginComponent } from '../../components/login/login.component';
 import { UserComponent } from './user.component';
 import { CommonModule } from '@angular/common';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
