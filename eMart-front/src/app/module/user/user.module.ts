@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import { CommonModule } from '@angular/common';
 // import { BrowserModule } from '@angular/platform-browser';
 import { UserRoutingModule } from './user-routing.module';
-// import { UserComponent } from './user.component';
+import { UserComponent } from './user.component';
 // import { LoginComponent } from '../../components-user/login/login.component';
 // import { RegisterComponent } from '../../components-user/register/register.component';
-// import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 // import { ListCosmeticsComponent } from './components/list-cosmetics/list-cosmetics.component';
 // import { ListGirlsComponent } from './components/list-girls/list-girls.component';
 // import { ListMaternityComponent } from './components/list-maternity/list-maternity.component';
@@ -17,10 +17,14 @@ import { UserRoutingModule } from './user-routing.module';
 // import { IndexComponent } from './components/index/index.component';
 
 @NgModule({
-  declarations: [    // TopBarComponent,
+  declarations: [  
+    UserComponent,
+    TopBarComponent,
+    // IndexComponent
   ],
   imports: [
     UserRoutingModule,
+    NgbModule,
 
   ],
   providers: [],
