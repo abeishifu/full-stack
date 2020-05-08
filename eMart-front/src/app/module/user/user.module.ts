@@ -7,6 +7,7 @@ import { UserComponent } from './user.component';
 // import { LoginComponent } from '../../components-user/login/login.component';
 // import { RegisterComponent } from '../../components-user/register/register.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
+// import { IndexComponent } from './components/index/index.component';
 // import { ListCosmeticsComponent } from './components/list-cosmetics/list-cosmetics.component';
 // import { ListGirlsComponent } from './components/list-girls/list-girls.component';
 // import { ListMaternityComponent } from './components/list-maternity/list-maternity.component';
@@ -14,7 +15,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 // import { ProductDetailsComponent } from './components/product-details/product-details.component';
 // import { CartComponent } from '../../cart/cart.component';
 // import { CartService } from '../../cart.service';
-// import { IndexComponent } from './components/index/index.component';
+
 
 @NgModule({
   declarations: [  
