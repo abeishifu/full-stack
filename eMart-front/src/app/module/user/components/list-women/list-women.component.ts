@@ -25,6 +25,7 @@ export class ListWomenComponent implements OnInit {
   }
 
   addToCart(product) {
+    console.log(product)
     window.alert('Your product has been added to the cart!')
     this.cartService.addToCart(product)
   }

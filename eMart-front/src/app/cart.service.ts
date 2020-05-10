@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { not } from '@angular/compiler/src/output/output_ast';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,22 @@ export class CartService {
   items = [];
 
   addToCart(product){
-    this.items.push(product);
+    let count = 0
+    if (this.items.length > 0) {
+      this.items.forEach(element => {
+        if (product.productId == element.productId)
+        {
+          product.num += 1 
+        }else {
+          product.num = count + 1
+          this.items.push(product)
+        }
+      });
+    }else{
+      product.num = count + 1
+      this.items.push(product)
+    }
+
   }
 
   removeFromCart(product){
@@ -23,5 +40,6 @@ export class CartService {
     this.items = [];
     return this.items;
   }
+
 
 }
