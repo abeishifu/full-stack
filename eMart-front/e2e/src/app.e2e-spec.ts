@@ -1,7 +1,7 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('women App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,8 +9,9 @@ describe('workspace-project App', () => {
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
+    page.navigateTo('/women');
     expect(page.getTitleText()).toEqual('eMart-front app is running!');
+    expect().toEqual();
   });
 
   afterEach(async () => {
