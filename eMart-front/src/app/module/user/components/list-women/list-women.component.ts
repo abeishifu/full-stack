@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { products } from '../../../../products';
 import { CartService } from '../../../../cart.service';
-
+import { users } from '../../../../users';
 
 @Component({
   selector: 'app-list-women',
@@ -12,6 +12,7 @@ import { CartService } from '../../../../cart.service';
 })
 export class ListWomenComponent implements OnInit {
   products = products
+  users = users
   product
   constructor(
     private route: ActivatedRoute,
