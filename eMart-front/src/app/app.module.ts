@@ -12,6 +12,7 @@ import { ListMaternityComponent } from './module/user/components/list-maternity/
 import { ListGirlsComponent } from './module/user/components/list-girls/list-girls.component';
 import { ListCosmeticsComponent } from './module/user/components/list-cosmetics/list-cosmetics.component';
 import { ProductDetailsComponent } from './module/user/components/product-details/product-details.component';
+import { ProductEditComponent } from './module/user/components/product-edit/product-edit.component';
 import { CartComponent } from './cart/cart.component';
 import { from } from 'rxjs';
 
@@ -27,6 +28,7 @@ import { from } from 'rxjs';
       ListGirlsComponent,
       ListCosmeticsComponent,
       ProductDetailsComponent,
+      ProductEditComponent,
       CartComponent,
       
    ],
