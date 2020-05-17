@@ -13,6 +13,7 @@ import { ListGirlsComponent } from './module/user/components/list-girls/list-gir
 import { ListCosmeticsComponent } from './module/user/components/list-cosmetics/list-cosmetics.component';
 import { ProductDetailsComponent } from './module/user/components/product-details/product-details.component';
 import { ProductEditComponent } from './module/user/components/product-edit/product-edit.component';
+import { ProductNewComponent } from './module/user/components/product-new/product-new.component';
 import { CartComponent } from './cart/cart.component';
 import { from } from 'rxjs';
 
@@ -29,6 +30,7 @@ import { from } from 'rxjs';
       ListCosmeticsComponent,
       ProductDetailsComponent,
       ProductEditComponent,
+      ProductNewComponent,
       CartComponent,
       
    ],

@@ -11,6 +11,7 @@ import { ListMaternityComponent } from './components/list-maternity/list-materni
 import { ListWomenComponent } from './components/list-women/list-women.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductNewComponent } from './components/product-new/product-new.component';
 import { CartComponent } from '../../cart/cart.component';
 import { CartService } from '../../cart.service';
 import { IndexComponent } from './components/index/index.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'cosmetics', component: ListCosmeticsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'edit/:productId', component: ProductEditComponent },
+      { path: 'new', component:  ProductNewComponent },
       { path: 'cart', component: CartComponent },
     ]
  },
