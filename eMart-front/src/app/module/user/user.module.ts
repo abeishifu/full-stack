@@ -15,7 +15,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 // import { ProductDetailsComponent } from './components/product-details/product-details.component';
 // import { CartComponent } from '../../cart/cart.component';
 // import { CartService } from '../../cart.service';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [  
@@ -26,7 +26,8 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
   imports: [
     UserRoutingModule,
     NgbModule,
-
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
 })

@@ -1,10 +1,10 @@
 <div class="full-screen" style="background:rgb(254, 131, 7);">
-        <form class="login-form align-self-center mx-auto " >
+        <form [formGroup]="formGroup" class="login-form align-self-center mx-auto"  (ngSubmit)="onSubmit()" >
             <div class="form-group ">
-              <input type="text" class="form-control" id="InputText" placeholder="User Name">
+              <input type="text" class="form-control" id="username" placeholder="User Name" formControlName="username">
             </div>
             <div class="form-group ">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
             </div>
             <button type="submit" class="btn btn-warning">Login</button>
             <a class="btn btn-warning" href="register">Register</a>

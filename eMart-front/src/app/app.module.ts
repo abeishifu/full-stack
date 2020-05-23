@@ -16,7 +16,7 @@ import { ProductEditComponent } from './module/user/components/product-edit/prod
 import { ProductNewComponent } from './module/user/components/product-new/product-new.component';
 import { CartComponent } from './cart/cart.component';
 import { from } from 'rxjs';
-
+import {FormsModule, ReactiveFormsModule,} from '@angular/forms';
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import { from } from 'rxjs';
       NgbModule,
       UserModule,
       RouterModule,
-      
+      FormsModule,
+      ReactiveFormsModule,
    ],
    bootstrap: [AppComponent]
 
