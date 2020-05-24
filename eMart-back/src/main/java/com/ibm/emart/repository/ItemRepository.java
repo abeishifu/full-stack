@@ -1,5 +1,9 @@
 package com.ibm.emart.repository;
 
-public class ItemRepository {
+import com.ibm.emart.entity.ItemEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface ItemRepository extends JpaRepository<ItemEntity,Integer> {
+
+  ItemEntity findByItemName(Integer id);
 }
