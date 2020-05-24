@@ -17,7 +17,8 @@ import { ProductNewComponent } from './module/user/components/product-new/produc
 import { CartComponent } from './cart/cart.component';
 import { from } from 'rxjs';
 import {FormsModule, ReactiveFormsModule,} from '@angular/forms';
-
+import { LoginComponent } from './components/login/login.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
    declarations: [
@@ -32,7 +33,7 @@ import {FormsModule, ReactiveFormsModule,} from '@angular/forms';
       ProductEditComponent,
       ProductNewComponent,
       CartComponent,
-      
+      LoginComponent,
    ],
    imports: [
       BrowserModule,
@@ -42,6 +43,7 @@ import {FormsModule, ReactiveFormsModule,} from '@angular/forms';
       RouterModule,
       FormsModule,
       ReactiveFormsModule,
+      HttpClientModule,
    ],
    bootstrap: [AppComponent]
 
