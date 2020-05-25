@@ -19,6 +19,7 @@ import { from } from 'rxjs';
 import {FormsModule, ReactiveFormsModule,} from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
+import { RegisterComponent } from './components/register/register.component'
 
 @NgModule({
    declarations: [
@@ -34,6 +35,7 @@ import {HttpClientModule} from '@angular/common/http';
       ProductNewComponent,
       CartComponent,
       LoginComponent,
+      RegisterComponent,
    ],
    imports: [
       BrowserModule,

@@ -9,7 +9,7 @@ import { UserService } from '../../user.service';
 })
 export class LoginComponent implements OnInit {
   formGroup: FormGroup;
-
+  rootUrl = '../';
   constructor(private router:Router,private userService:UserService) { }
 
   ngOnInit() {
@@ -24,9 +24,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const username = this.formGroup.get('username').value;
     const password = this.formGroup.get('password').value;
-    console.log(username);
     this.userService.login(username,password).subscribe(result =>{
-      console.log(result);
+      if (result) {
+        this.router.navigate(['./../']);
+        // this.userService.setIsLogin(true);
+      } else {
+        alert('wrong user name or password');
+      }
     })
     
   }
