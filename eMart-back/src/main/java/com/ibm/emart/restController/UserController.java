@@ -36,12 +36,7 @@ public class UserController {
   @PostMapping("/login")
   @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
   public Boolean login(@RequestBody User user){
-    System.out.println("login");
-    System.out.println(user.getUsername());
-    String o =  userRepository.findByuserName("u");
-    System.out.println(o);
-    return null;
-
-
+    System.out.println(user.getPassword());
+    return userService.login(user.getUsername(),user.getPassword());
   }
 }

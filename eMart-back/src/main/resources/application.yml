@@ -9,5 +9,5 @@ spring:
       database-platform: org.hibernate.dialect.MySQL5Dialect
       ddl-auto: update
       show-sql: true
-
+logging.level.org.hibernate.SQL: DEBUG
 

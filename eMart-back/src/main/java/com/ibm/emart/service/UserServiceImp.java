@@ -17,17 +17,14 @@ public class UserServiceImp implements UserService{
   @Override
   public boolean login(String userName, String password){
     Boolean result = false;
-//    try {
-//      User user = this.userRepository.findByUserId("1");
-      String pass = this.userRepository.findByuserName("u");
-//      System.out.println(user);
+      String pass = this.userRepository.findByuserName(userName);
       System.out.println(pass);
-//      if (user.getPassword() == password){
-//        result = true;
-//      }
+      System.out.println(password);
+      if (pass.equals(password)){
 
-//    }
-
+        System.out.println("ggggggggg");
+        result = true;
+      }
     return result;
 
   }
