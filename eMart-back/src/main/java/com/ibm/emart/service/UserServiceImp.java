@@ -1,5 +1,6 @@
 package com.ibm.emart.service;
 
+import com.ibm.emart.entity.User;
 import com.ibm.emart.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,18 +16,28 @@ public class UserServiceImp implements UserService{
   }
 
   @Override
-  public boolean login(String userName, String password){
-    Boolean result = false;
+  public User login(String userName, String password){
+    User role;
       String pass = this.userRepository.findByuserName(userName);
-      System.out.println(pass);
-      System.out.println(password);
       if (pass.equals(password)){
-
-        System.out.println("ggggggggg");
-        result = true;
+        role = this.userRepository.findRole(userName);
+        if (role.getUserrole().equals("buyer") || role.getUserrole().equals("seller")){
+          return role;
+        }
       }
-    return result;
-
+    return null;
   }
+
+  public boolean register(User user){
+    try{
+      System.out.println(user.getEmail());
+      this.userRepository.adduser(user.getUsername(),user.getPassword(),user.getMobilenum(),user.getEmail(),user.getUserrole());
+      return true;
+    }catch(Exception exception){
+      System.out.println(exception);
+      return false;
+    }
+  }
+
 
 }

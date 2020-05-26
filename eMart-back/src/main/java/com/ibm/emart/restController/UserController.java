@@ -27,16 +27,18 @@ public class UserController {
   }
 
   @PostMapping("/register")
-  public ResponseEntity<User> register(@RequestBody User user){
-    System.out.println("aaaaa");
-    return ResponseEntity.ok(user);
+  @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
+  public Boolean register(@RequestBody User user){
+    System.out.println("aaaaa" + user.getMobilenum());
+    return userService.register(user);
   }
 
 
   @PostMapping("/login")
   @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
-  public Boolean login(@RequestBody User user){
+  public User login(@RequestBody User user){
     System.out.println(user.getPassword());
     return userService.login(user.getUsername(),user.getPassword());
+//    return "buyer";
   }
 }
