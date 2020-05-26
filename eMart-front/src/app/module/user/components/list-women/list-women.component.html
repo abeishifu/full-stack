@@ -12,7 +12,7 @@
       </svg>
       Buy
       </a>
-      <div *ngIf="(users[0].role) == 'seller'">
+      <div *ngIf="(role) == 'seller'">
         <a class="btn btn-primary" [title]="product.name + ' edit'" [routerLink]="['/edit', product.productId]">Edit</a>
       </div>
       

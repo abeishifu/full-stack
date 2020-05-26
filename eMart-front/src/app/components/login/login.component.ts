@@ -26,6 +26,9 @@ export class LoginComponent implements OnInit {
     const password = this.formGroup.get('password').value;
     this.userService.login(username,password).subscribe(result =>{
       if (result) {
+        sessionStorage.setItem("role",result.userrole);
+        sessionStorage.setItem("username",result.username);
+        console.log(sessionStorage.getItem("role"))
         this.router.navigate(['./../']);
         // this.userService.setIsLogin(true);
       } else {

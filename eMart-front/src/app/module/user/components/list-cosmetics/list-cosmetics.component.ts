@@ -21,6 +21,7 @@ export class ListCosmeticsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.product = products[+params.get('productId')];
     })
+    console.log(sessionStorage.getItem("role"))
   }
 
   addToCart(product) {

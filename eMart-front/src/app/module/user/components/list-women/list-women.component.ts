@@ -14,6 +14,7 @@ export class ListWomenComponent implements OnInit {
   products = products
   users = users
   product
+  role = sessionStorage.getItem("role")
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService,
