@@ -68,4 +68,17 @@ export class UserService {
     const url = 'http://localhost:8080/register';
     return this.httpClient.post<boolean>(url,{username,password,mobilenum,email,userrole});
   }
+
+    /**
+   * @METHODS newitem
+   * @param itemname
+   * @param itemprice 
+   * @return TRUE: success ; FALSE: failed
+   */
+  newitem(itemname: string, itemprice: string, description: string, catalog: string, sellerid: string):Observable<boolean> {
+    const url = 'http://localhost:8080/newitem';
+    console.log(sellerid)
+    return this.httpClient.post<boolean>(url,{itemname,itemprice,description,catalog,sellerid});
+  }
+
 }

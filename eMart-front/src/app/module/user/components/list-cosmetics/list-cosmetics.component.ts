@@ -12,6 +12,7 @@ import { CartService } from '../../../../cart.service';
 export class ListCosmeticsComponent implements OnInit {
   products = products
   product
+  role = sessionStorage.getItem("role")
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService,
