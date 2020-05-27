@@ -1,11 +1,11 @@
 package com.ibm.emart.restController;
 
 
+import com.ibm.emart.entity.Item;
 import com.ibm.emart.entity.User;
-import com.ibm.emart.repository.UserRepository;
+import com.ibm.emart.service.ItemService;
 import com.ibm.emart.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +19,7 @@ public class UserController {
   UserService userService;
 
   @Autowired
-  private UserRepository userRepository;
+  ItemService itemService;
 
   @GetMapping("/index")
   public String index() {
@@ -41,4 +41,16 @@ public class UserController {
     return userService.login(user.getUsername(),user.getPassword());
 //    return "buyer";
   }
+
+  @PostMapping("/newitem")
+  @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
+  public Boolean newitem(@RequestBody Item item){
+    System.out.println("id" + item.getSellerid());
+    System.out.println("id" + item.getItemname());
+    System.out.println("id" + item.getCatalog());
+    System.out.println("id" + item.getDescription());
+    System.out.println("id" + item.getItemprice());
+    return itemService.newitem(item);
+  }
+
 }

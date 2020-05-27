@@ -1,19 +1,14 @@
 package com.ibm.emart.service;
 
 import com.ibm.emart.entity.User;
-import com.ibm.emart.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImp implements UserService{
 
-  private UserRepository userRepository;
-
   @Autowired
-  public UserServiceImp(UserRepository userRepository){
-    this.userRepository = userRepository;
-  }
+  UserRepository userRepository;
 
   @Override
   public User login(String userName, String password){
