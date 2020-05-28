@@ -9,37 +9,36 @@ import javax.persistence.Table;
 @Entity
 @Table(name="item")
 public class Item {
-  private Integer itemid;
-  private String  itemname;
-  private String  itemprice;
+  private Integer itemId;
+  private String  itemName;
+  private String  itemPrice;
   private String  description;
   private String  catalog;
-  private String  sellerid;
+  private String  sellerId;
   private String  amount;
-  private byte    image;
 
   public Item(){}
 
   @Id
   @GeneratedValue
   @Column(name="itemid")
-  public Integer getItemid() {
-    return itemid;
+  public Integer getItemId() {
+    return itemId;
   }
-  public void setItemid(Integer itemId) {
-    this.itemid = itemid;
+  public void setItemId(Integer itemId) {
+    this.itemId = itemId;
   }
   @Column(name="itemname")
   public String getItemname() {
-    return itemname;
+    return itemName;
   }
   public void setItemname(String itemName) {
-    this.itemname = itemname;
+    this.itemName = itemName;
   }
   @Column(name="itemprice")
-  public String getItemprice() { return itemprice; }
+  public String getItemprice() { return itemPrice; }
   public void setItemprice(String itemPrice) {
-    this.itemprice = itemprice;
+    this.itemPrice = itemPrice;
   }
   @Column(name="description")
   public String getDescription() {
@@ -57,10 +56,10 @@ public class Item {
   }
   @Column(name="sellerid")
   public String getSellerid() {
-    return sellerid;
+    return sellerId;
   }
   public void setSellerid(String sellerId) {
-    this.sellerid = sellerid;
+    this.sellerId = sellerId;
   }
   @Column(name="amount")
   public String getAmount() {
@@ -68,13 +67,6 @@ public class Item {
   }
   public void setAmount(String amount) {
     this.amount = amount;
-  }
-  @Column(name="image")
-  public byte getImage() {
-    return image;
-  }
-  public void setImage(byte image) {
-    this.image = image;
   }
 
 }

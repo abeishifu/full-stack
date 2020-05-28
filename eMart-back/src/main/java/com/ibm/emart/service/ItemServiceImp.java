@@ -2,6 +2,7 @@ package com.ibm.emart.service;
 
 import com.ibm.emart.entity.Item;
 import com.ibm.emart.repository.ItemRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,10 @@ public class ItemServiceImp implements ItemService{
       System.out.println(exception);
       return false;
     }
+  }
+
+  public List<Item> getList(){
+    return this.itemRepository.getList();
   }
 
 }

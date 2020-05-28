@@ -5,6 +5,7 @@ import com.ibm.emart.entity.Item;
 import com.ibm.emart.entity.User;
 import com.ibm.emart.service.ItemService;
 import com.ibm.emart.service.UserService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,6 +52,12 @@ public class UserController {
     System.out.println("id" + item.getDescription());
     System.out.println("id" + item.getItemprice());
     return itemService.newitem(item);
+  }
+
+  @GetMapping("/get")
+  @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
+  public List<Item> getList() {
+    return itemService.getList();
   }
 
 }

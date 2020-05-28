@@ -1,6 +1,7 @@
 package com.ibm.emart.service;
 
 import com.ibm.emart.entity.User;
+import com.ibm.emart.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
