@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ItemService } from '../../../../Item.service';
 
-import { products } from '../../../../products';
 
 @Component({
   selector: 'app-product-edit',
@@ -9,14 +9,18 @@ import { products } from '../../../../products';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
+  products;
   product;
   constructor(
     private route: ActivatedRoute,
+    private itemService:ItemService
   ) { }
 
   ngOnInit() {
+    this.itemService.loadList();
+    this.products = JSON.parse(localStorage.getItem('products'))
     this.route.paramMap.subscribe(params => {
-    this.product = products[+params.get('productId')];
+    this.product = this.products[+params.get('itemId')];
     });
   }
 

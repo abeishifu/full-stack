@@ -13,7 +13,7 @@ export class CartService {
     let count = 0
     if (this.items.length > 0) {
       this.items.forEach(element => {
-        if (product.productId == element.productId)
+        if (product.itemId == element.itemId)
         {
           product.num += 1 
         }else {

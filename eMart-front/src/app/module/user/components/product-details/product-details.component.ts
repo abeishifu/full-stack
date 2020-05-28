@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { products } from '../../../../products';
 import { CartService } from '../../../../cart.service';
+import { ItemService } from '../../../../Item.service';
 
 @Component({
   selector: 'app-product-details',
@@ -10,15 +9,19 @@ import { CartService } from '../../../../cart.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+  products;
   product;
   constructor(
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private itemService:ItemService
   ) { }
 
   ngOnInit() {
+    this.itemService.loadList();
+    this.products = JSON.parse(localStorage.getItem('products'))
     this.route.paramMap.subscribe(params => {
-    this.product = products[+params.get('productId')];
+    this.product = this.products[+params.get('itemId')];
     });
   }
 

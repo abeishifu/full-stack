@@ -2,9 +2,9 @@
   <div class="card col border-warning" style="width: 18rem;" *ngFor="let product of products">
   <img src="/assets/images/cloth.png" class="card-img-top" alt="...">
   <div class="card-body" >
-    <h5 class="card-title">{{product.name}}</h5>
+    <h5 class="card-title">{{product.itemname}}</h5>
     <p class="card-text">{{product.description}}</p>
-    <a class="btn btn-primary" [title]="product.name + 'details'" [routerLink]="['/products', product.productId]">Details</a>
+    <a class="btn btn-primary" [title]="product.itemname + 'details'" [routerLink]="['/products', product.itemId]">Details</a>
     <a type="button" class="btn btn-warning" (click)="addToCart(product)">
     <svg class="pull-right" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
       <path d="M0 0h24v24H0zm18.31 6l-2.76 5z" fill="none"/>
@@ -13,7 +13,7 @@
     Buy
   </a>
   <div *ngIf="(role) == 'seller'">
-    <a class="btn btn-primary" [title]="product.name + ' edit'" [routerLink]="['/edit', product.productId]">Edit</a>
+    <a class="btn btn-primary" [title]="product.itemname + ' edit'" [routerLink]="['/edit', product.itemId]">Edit</a>
   </div> 
   </div>
   </div>
