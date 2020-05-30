@@ -27,5 +27,17 @@ loadList(): void{
       });
 }
 
+    /**
+   * @METHODS updateitem
+   * @param itemname
+   * @param itemprice 
+   * @param description
+   * @return TRUE: success ; FALSE: failed
+   */
+  updateitem(itemId: number,itemname: string, itemprice: string, description: string):Observable<boolean> {
+    const url = 'http://localhost:8080/updateitem';
+    console.log(itemname)
+    return this.httpClient.post<boolean>(url,{itemId,itemname,itemprice,description});
+  }
 
 }

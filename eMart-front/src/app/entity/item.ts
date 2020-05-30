@@ -3,6 +3,7 @@
  */
 export class Item {
     itemid: number;
+    itemId: number;
     itemname: string;
     itemprice: string;
     description: string;
@@ -17,8 +18,9 @@ export class Item {
      * @param catalog 
      * @param sellerid 
      */
-    constructor(itemid?: number, itemname?: string,  itemprice?: string, description?: string, catalog?:string, sellerid?:string) {
+    constructor(itemid?: number,itemId?: number, itemname?: string,  itemprice?: string, description?: string, catalog?:string, sellerid?:string) {
       this.itemid = itemid;
+      this.itemId = itemId;
       this.itemname = itemname;
       this.itemprice = itemprice;
       this.description = description;
