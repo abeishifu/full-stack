@@ -8,4 +8,8 @@ public interface ItemService {
   boolean newitem(Item item);
 
   List<Item> getList();
+
+  void delete(int itemId);
+
+  boolean updateitem(Item item);
 }

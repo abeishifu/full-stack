@@ -27,4 +27,17 @@ public class ItemServiceImp implements ItemService{
     return this.itemRepository.getList();
   }
 
+  public void delete(int itemId){
+     this.itemRepository.delete(itemId);
+  }
+
+  public boolean updateitem(Item item){
+    try{
+      this.itemRepository.updateitem(item.getItemId(),item.getItemname(),item.getItemprice(),item.getDescription());
+      return true;
+    }catch (Exception exception){
+      return false;
+    }
+  }
+
 }

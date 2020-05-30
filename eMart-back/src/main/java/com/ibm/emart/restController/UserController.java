@@ -7,10 +7,14 @@ import com.ibm.emart.service.ItemService;
 import com.ibm.emart.service.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -46,11 +50,6 @@ public class UserController {
   @PostMapping("/newitem")
   @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
   public Boolean newitem(@RequestBody Item item){
-    System.out.println("id" + item.getSellerid());
-    System.out.println("id" + item.getItemname());
-    System.out.println("id" + item.getCatalog());
-    System.out.println("id" + item.getDescription());
-    System.out.println("id" + item.getItemprice());
     return itemService.newitem(item);
   }
 
@@ -60,4 +59,17 @@ public class UserController {
     return itemService.getList();
   }
 
+  @DeleteMapping("/delete/{itemid}")
+  @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
+  public boolean delete(@RequestParam int itemid) {
+    System.out.println(itemid);
+     itemService.delete(itemid);
+     return true;
+  }
+
+  @PostMapping("/updateitem")
+  @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
+  public Boolean updateitem(@RequestBody Item item){
+    return itemService.updateitem(item);
+  }
 }
