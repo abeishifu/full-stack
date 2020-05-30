@@ -10,7 +10,8 @@ import { ItemService } from '../../../../Item.service';
 })
 export class ListMaternityComponent implements OnInit {
   products;
-  product;
+  maternity;
+  mater;
   role = sessionStorage.getItem("role")
   constructor(
     private route: ActivatedRoute,
@@ -19,14 +20,12 @@ export class ListMaternityComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var maternity
     this.itemService.loadList();
-    maternity = JSON.parse(localStorage.getItem('products'))
-    this.products = maternity.filter(product => product.catalog == 'maternity')
+    this.products = JSON.parse(localStorage.getItem('products'));
+    this.maternity = this.products.filter(product => product.catalog == 'maternity');
     this.route.paramMap.subscribe(params => {
-      this.product = maternity[+params.get('itemId')];
-    })  
-    console.log("ngOnInit")
+        this.mater = this.maternity[+params.get('productId')];
+      }) 
   }
 
   addToCart(product) {

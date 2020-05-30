@@ -10,7 +10,8 @@ import { ItemService } from '../../../../Item.service';
 })
 export class ListWomenComponent implements OnInit {
   products;
-  product;
+  woman;
+  women;
   role = sessionStorage.getItem("role")
   constructor(
     private route: ActivatedRoute,
@@ -19,18 +20,17 @@ export class ListWomenComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var women
     this.itemService.loadList();
-    women = JSON.parse(localStorage.getItem('products'))
-    this.products = women.filter(product => product.catalog == 'women')
-    this.route.paramMap.subscribe(params => {
-      this.product = women[+params.get('itemId')];
-    })  
-    console.log("ngOnInit")
+      this.products = JSON.parse(localStorage.getItem('products'));
+      this.women = this.products.filter(product => product.catalog == 'women');
+      this.route.paramMap.subscribe(params => {
+        this.woman = this.women[+params.get('productId')];
+      })  
+    
+
   }
 
   addToCart(product) {
-    console.log(product)
     window.alert('Your product has been added to the cart!')
     this.cartService.addToCart(product)
   }

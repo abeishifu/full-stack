@@ -24,8 +24,8 @@ const routes: Routes = [
       { path: 'maternity', component: ListMaternityComponent },
       { path: 'girls', component: ListGirlsComponent },
       { path: 'cosmetics', component: ListCosmeticsComponent },
-      { path: 'products/:itemId', component: ProductDetailsComponent },
-      { path: 'edit/:itemId', component: ProductEditComponent },
+      { path: 'products/:catalog/:productId', component: ProductDetailsComponent },
+      { path: 'edit/:catalog/:productId', component: ProductEditComponent },
       { path: 'new', component:  ProductNewComponent },
       { path: 'cart', component: CartComponent },
     ]

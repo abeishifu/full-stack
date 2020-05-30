@@ -14,9 +14,9 @@ constructor(private httpClient: HttpClient) { }
 loadList(): void{
   if(localStorage.getItem('products')){
     console.log("local not null")
-    console.log(JSON.parse(localStorage.getItem('products')));
-  }else{
-  console.log("loadlist")
+    localStorage.clear;
+  }
+    console.log("loadlist")
     const url = 'http://localhost:8080/get';
      this.httpClient.get(url).subscribe(items => {
       this.items = items; 
@@ -25,7 +25,6 @@ loadList(): void{
       () => {
         console.log('aaa');
       });
-    }
 }
 
 

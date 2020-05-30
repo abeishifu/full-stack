@@ -9,8 +9,12 @@ import { ItemService } from '../../../../Item.service';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-  products;
+  products; 
   product;
+  women;
+  maternity;
+  girls;
+  cosmetics;
   constructor(
     private route: ActivatedRoute,
     private itemService:ItemService
@@ -18,9 +22,24 @@ export class ProductEditComponent implements OnInit {
 
   ngOnInit() {
     this.itemService.loadList();
-    this.products = JSON.parse(localStorage.getItem('products'))
+    this.products = JSON.parse(localStorage.getItem('products'));
+    this.women = this.products.filter(product => product.catalog == 'women');
+    this.maternity = this.products.filter(product => product.catalog == 'maternity');
+    this.girls = this.products.filter(product => product.catalog == 'girls');
+    this.cosmetics = this.products.filter(product => product.catalog == 'cosmetics');
     this.route.paramMap.subscribe(params => {
-    this.product = this.products[+params.get('itemId')];
+      var catalog = params.get('catalog')
+      console.log(catalog);
+      if( catalog == 'women') {
+        this.product = this.women[+params.get('productId')];
+      }else if( catalog == 'maternity' ){
+        this.product = this.maternity[+params.get('productId')];
+      }else if (catalog == 'girls' ){
+        this.product = this.girls[+params.get('productId')];
+      }else if (catalog == 'cosmetics' ){
+        this.product = this.cosmetics[+params.get('productId')];
+      }
+
     });
   }
 

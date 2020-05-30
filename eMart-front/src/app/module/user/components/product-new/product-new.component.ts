@@ -30,7 +30,7 @@ export class ProductNewComponent implements OnInit {
       console.log(sellerid);
       if (result) {
         console.log(result);
-        this.router.navigate(['./../login']);
+        this.router.navigate(['./../']);
         // this.userService.setIsLogin(true);
       } else {
         alert('wrong user name or password');
