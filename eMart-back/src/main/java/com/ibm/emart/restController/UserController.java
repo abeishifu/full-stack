@@ -59,10 +59,9 @@ public class UserController {
     return itemService.getList();
   }
 
-  @DeleteMapping("/delete/{itemid}")
+  @DeleteMapping("delete/{itemid}")
   @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
-  public boolean delete(@RequestParam int itemid) {
-    System.out.println(itemid);
+  public boolean delete(@PathVariable int itemid) {
      itemService.delete(itemid);
      return true;
   }
