@@ -76,8 +76,9 @@ export class ProductEditComponent implements OnInit {
   // }
 
 
-  onDelete(Item: Item):void{
-    const url = "http://localhost:8080/delete/${Item.itemid}";
+  onDelete():void{
+    const url = `http://localhost:8080/delete/${this.itemId}`;
+    console.log(url)
      this.httpClient.delete(url).subscribe( data => {
       console.log(data)
     },
