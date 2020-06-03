@@ -1,6 +1,6 @@
 package com.ibm.emart.item.repository;
 
-import com.ibm.emart.entity.Item;
+import com.ibm.emart.item.entity.Item;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -27,5 +27,7 @@ public interface ItemRepository extends JpaRepository<Item,Integer> {
   @Query(nativeQuery = true, value = "update item set itemname=:itemname,itemprice=:itemprice,description=:description where itemid=:itemid")
   void updateitem( @Param("itemid") int itemid,@Param("itemname") String itemname, @Param("itemprice") String itemprice, @Param("description") String description);
 
-
+  @Modifying @Transactional
+  @Query(nativeQuery = true, value = "insert into history(itemid,userid)")
+  void buy(@Param("itemid") int itemid, @Param("userid") int userid);
 }

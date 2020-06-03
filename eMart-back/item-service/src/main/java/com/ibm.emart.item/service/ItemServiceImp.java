@@ -1,6 +1,6 @@
 package com.ibm.emart.item.service;
 
-import com.ibm.emart.entity.Item;
+import com.ibm.emart.item.entity.Item;
 import com.ibm.emart.item.repository.ItemRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +34,15 @@ public class ItemServiceImp implements ItemService{
   public boolean updateitem(Item item){
     try{
       this.itemRepository.updateitem(item.getItemId(),item.getItemname(),item.getItemprice(),item.getDescription());
+      return true;
+    }catch (Exception exception){
+      return false;
+    }
+  }
+
+  public boolean buyList(List<Item> items, int userid){
+    try{
+      items.forEach(item -> this.itemRepository.buy(item.getItemId(),userid));
       return true;
     }catch (Exception exception){
       return false;

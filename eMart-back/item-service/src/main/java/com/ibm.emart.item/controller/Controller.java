@@ -1,6 +1,6 @@
 package com.ibm.emart.item.controller;
 
-import com.ibm.emart.entity.Item;
+import com.ibm.emart.item.entity.Item;
 import com.ibm.emart.item.service.ItemService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +41,12 @@ public class Controller {
   @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
   public Boolean updateitem(@RequestBody Item item){
     return itemService.updateitem(item);
+  }
+
+  @PostMapping("/buy")
+  @CrossOrigin(origins = "http://localhost:4200",allowCredentials = "true")
+  public Boolean buyList(@RequestBody List<Item> items, int userid) {
+    return itemService.buyList(items,userid);
   }
 
 }

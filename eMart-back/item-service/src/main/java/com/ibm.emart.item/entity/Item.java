@@ -1,4 +1,4 @@
-package com.ibm.emart.entity;
+package com.ibm.emart.item.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
