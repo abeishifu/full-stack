@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: user-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -11,3 +13,16 @@ spring:
       show-sql: true
 logging.level.org.hibernate.SQL: DEBUG
 
+server:
+  port: 8763
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+ribbon:
+  eureka:
+    enabled: true
+user-service:
+  ribbon:
+    listOfServers: http://localhost:8763

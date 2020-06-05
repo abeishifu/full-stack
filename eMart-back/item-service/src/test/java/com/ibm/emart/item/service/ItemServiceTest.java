@@ -1,12 +1,12 @@
 package com.ibm.emart.item.service;
 
 import static java.lang.Boolean.FALSE;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 import com.ibm.emart.item.repository.ItemRepository;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

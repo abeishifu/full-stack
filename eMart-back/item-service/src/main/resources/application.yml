@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: item-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -10,4 +12,10 @@ spring:
       ddl-auto: update
       show-sql: true
 logging.level.org.hibernate.SQL: DEBUG
+server:
+  port: 8762
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

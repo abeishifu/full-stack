@@ -1,0 +1,44 @@
+
+### gateway config###
+server:
+  port: 9000
+
+#提供的服务，服务名称
+spring:
+  application:
+    name: zuul
+  cloud:
+    config: false
+
+
+#2个配置为一组，可配置多组
+#开头是固定的zuul.routes，结尾也是固定的path、service-id,中间部分相当于这组配置的id，可随意取
+#映射地址
+#zuul.routes.user-service.path=/user-server/**
+#要映射的服务
+##zuul.routes.user-service.service-id=user-server
+zuul:
+  routes:
+    user-service:
+      service-id: user-service
+      path: /user-service/**
+
+    zuul-item-service:
+      service-id: item-service
+      path: /item-service/**
+
+eureka:
+  client:
+#    ipAddress: localhost
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    prefer-ip-address: true   #开启显示IP地址
+    instance-id: ${eureka.client.ipAddress}:${server.port}   #eureka页面显示IP地址：端口号
+#    #    prefer-ip-address: false
+#    #    hostname: 106.54.194.33
+#    #    instance-id: 106.54.194.33:${server.port}
+#    lease-expiration-duration-in-seconds: 30
+#    lease-renewal-interval-in-seconds: 10
