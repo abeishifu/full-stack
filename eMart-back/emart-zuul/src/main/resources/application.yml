@@ -22,18 +22,21 @@ zuul:
     user-service:
       service-id: user-service
       path: /user-service/**
+      url: http://localhost:8080/
 
     zuul-item-service:
       service-id: item-service
       path: /item-service/**
+      url: http://localhost:8762/
+
 
 eureka:
   client:
-#    ipAddress: localhost
+    ipAddress: localhost
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
   instance:
     prefer-ip-address: true   #开启显示IP地址
     instance-id: ${eureka.client.ipAddress}:${server.port}   #eureka页面显示IP地址：端口号
@@ -42,3 +45,18 @@ eureka:
 #    #    instance-id: 106.54.194.33:${server.port}
 #    lease-expiration-duration-in-seconds: 30
 #    lease-renewal-interval-in-seconds: 10
+ribbon:
+  ReadTimeout: 10000   #请求处理的超时时间
+  ConnectTimeout: 10000   #请求连接的超时时间
+
+## Disable Hystrix timeout globally (for all services)
+#hystrix.command.default.execution.timeout.enabled: false
+#
+##To disable timeout foror particular service,
+#hystrix.command.<serviceName>.execution.timeout.enabled: false
+#
+## Increase the Hystrix timeout to 60s (globally)
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+#
+## Increase the Hystrix timeout to 60s (per service)
+#hystrix.command.<serviceName>.execution.isolation.thread.timeoutInMilliseconds: 60000
